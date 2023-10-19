@@ -1,0 +1,19 @@
+body {
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    h1 {
+    color: darkslategrey;
+    text-align: center;
+    }
+    
+    .assign {
+    margin: 10px;
+    padding: 10px;
+    background: grey;
+    display: flex;
+    }
+    .assign img {
+    width: 200px;
+    padding: 10px;
+    }
