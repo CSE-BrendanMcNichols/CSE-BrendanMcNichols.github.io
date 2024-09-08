@@ -1,0 +1,42 @@
+body {
+    background: violet;
+    font-family: Arial, sans-serif;
+}
+
+#content {
+     background: white;
+     padding:5px;
+     margin:20px auto;
+     width:70%;
+     border-radius:10px;
+     border:5px solid green;
+}
+
+#main-nav ul {
+    padding-left: 0;
+}
+#main-nav li {
+    list-style-type: none;
+    display: inline;
+}
+#main-nav a {
+    text-decoration: none;
+    background: #FF8DA1;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 2px;
+}
+
+#main-nav a:hover {
+    background: black;
+    color: #FF8DA1
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+}

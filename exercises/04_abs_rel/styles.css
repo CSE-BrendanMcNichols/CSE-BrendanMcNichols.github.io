@@ -1,0 +1,63 @@
+/* Structure */
+
+body {
+    background-color: skyblue;
+}
+
+#content {
+    background: white;
+}
+.columns-all {
+    display:flex;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+#main-header {
+    position:relative;
+}
+
+#main-img {
+    margin-right:5px;
+}
+
+/* Login Menu */
+#login-menu {
+    background: red;
+    width:fit-content
+    padding:10px;
+    position:absolute;
+    top:3%;
+    right:3%;
+}
+
+#login-menu ul {
+    padding-left:0;
+}
+
+#login-menu li {
+    list-style-type: none;
+    padding:5px;
+}
+
+#login-menu a:hover {
+    text-decoration: underline;
+    color: red;
+}
+/* Larger Resolutions */
+@media only screen and (min-width:600px) {
+    #content {
+        width:70%;
+        margin:auto;
+    }
+    .columns {
+        display:flex;
+    }
+
+    #settings {
+        display:none;
+    }
+}
