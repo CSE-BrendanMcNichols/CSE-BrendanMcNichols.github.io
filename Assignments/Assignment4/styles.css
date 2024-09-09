@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
     max-width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
 }
 
 .header {
@@ -101,15 +105,17 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.admissions-title h1 {
+    font-size: 35px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
 .admissions-section {
     padding: 50px 20px;
     background-color: #fff;
     margin-top: 20px;
     text-align: center;
-}
-
-.admissions-title h1 {
-    font-size: 35px;
 }
 
 .admissions-content,
@@ -168,6 +174,7 @@ body {
 }
 
 .text-container h2 {
+    font-family: Georgia, serif;
     font-size: 34px;
     margin-bottom: 15px;
 }
@@ -232,6 +239,7 @@ body {
 
 .investment-container h2 {
     color: #73000a;
+    font-family: Georgia, serif;
     font-size: 44px;
     font-weight: 800;
     margin-bottom: 20px;
@@ -259,6 +267,7 @@ body {
 
 .paying-container h2 {
     color: #73000a;
+    font-family: Georgia, serif;
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 20px;
@@ -359,6 +368,7 @@ body {
 }
 
 .next-step-content h2 {
+    font-family: Georgia, serif;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
