@@ -9,10 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, serif;
-}
-
 .header {
     background-color: #000;
     color: #fff;
@@ -61,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 .logo-text {
     color: #fff;
     font-size: 18px;
+    font-family: Georgia, serif;
 }
 
 .main-nav {
@@ -107,7 +104,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .admissions-title h1 {
     font-size: 35px;
-    font-family: Georgia, serif;
     font-weight: bold;
 }
 
@@ -174,7 +170,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-container h2 {
-    font-family: Georgia, serif;
     font-size: 34px;
     margin-bottom: 15px;
 }
@@ -239,10 +234,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .investment-container h2 {
     color: #73000a;
-    font-family: Georgia, serif;
     font-size: 44px;
     font-weight: 800;
     margin-bottom: 20px;
+    font-family: Georgia, serif;
 }
 
 .investment-container p {
@@ -267,10 +262,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .paying-container h2 {
     color: #73000a;
-    font-family: Georgia, serif;
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 20px;
+    font-family: Georgia, serif;
 }
 
 .paying-container p {
@@ -368,7 +363,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .next-step-content h2 {
-    font-family: Georgia, serif;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
