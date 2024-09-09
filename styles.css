@@ -83,3 +83,13 @@ footer {
         width: 80%;
     }
 }
+
+.assignment a {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+}
+
+.assignment a:hover {
+    color: #73000a; 
+}
