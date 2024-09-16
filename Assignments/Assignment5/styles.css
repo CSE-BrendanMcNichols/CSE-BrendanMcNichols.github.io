@@ -5,12 +5,14 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
 }
+
 .column {
     width: 30%;
     padding: 20px;
@@ -19,6 +21,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 #countBox {
@@ -45,6 +48,7 @@ body {
     height: 400px;
     width: 100%;
 }
+
 #slider {
     width: 100%;
     margin-bottom: 20px;
@@ -54,6 +58,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
 #movableSquare {
     width: 200px;
     height: 200px;
@@ -62,3 +67,30 @@ body {
     top: -20;
     left: 0;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    #randomImage {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #slider {
+        width: 100%;
+    }
+
+    #movableSquare {
+        left: 0;
+        margin: 0 auto;
+    }
+}
+
