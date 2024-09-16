@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    color: #34495e;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.column {
+    width: 30%;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#countBox {
+    background-color: #6cace4;
+    color: #ffffff;
+    font-size: 3em;
+    padding: 40px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+}
+
+#randomImage {
+    width: 80%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.slider-container {
+    position: relative;
+    margin-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+#slider {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 10px;
+    background: #e6e6fa;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#movableSquare {
+    width: 200px;
+    height: 200px;
+    background-color: #6cace4;
+    position: relative;
+    top: -20;
+    left: 0;
+}
