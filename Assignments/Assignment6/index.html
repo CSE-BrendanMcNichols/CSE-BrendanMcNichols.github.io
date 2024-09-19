@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 8 - If Statements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Assignment 8</h1>
+        <h2>If Statements</h2>
+
+        <div class="menu">
+            <div class="menu-toggle">
+                <span id="menu-arrow">▼</span>
+            </div>
+            <ul class="menu-items" id="menu-items">
+                <li><a href="#" onclick="showExercise(1)">Exercise 1</a></li>
+                <li><a href="#" onclick="showExercise(2)">Exercise 2</a></li>
+            </ul>
+        </div>
+
+        <div id="exercise1" class="exercise-content">
+            <div class="slider-container" id="color-slider-container">
+                <label for="color-slider">Color Slider</label>
+                <input type="range" id="color-slider" min="0" max="255" value="0" oninput="updateBackgroundColor()">
+                <p id="color-message">Move the slider to change the color</p>
+            </div>
+        </div>
+        
+        <div id="exercise2" class="exercise-content" style="display:none;">
+            <div class="picture-chooser">
+                <label>Picture Chooser</label>
+                <div class="button-group">
+                    <button onclick="choosePicture('small')">Small</button>
+                    <button onclick="choosePicture('medium')">Medium</button>
+                    <button onclick="choosePicture('large')">Large</button>
+                </div>
+                <img id="chosen-image" alt="Random image" style="margin-top: 20px; display: none;">
+            </div>
+        </div>
+        
+        <p class="contact">@CSE-Brendan McNichols</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
