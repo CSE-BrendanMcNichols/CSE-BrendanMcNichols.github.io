@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Destinations - Explore the Pacific Northwest</title>
+</head>
+<body>
+    <header>
+        <h1>Explore the Pacific Northwest</h1>
+    </header>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="schedule-planner.html">Schedule Planner</a></li>
+            <li><a href="travel-tips.html">Travel Tips</a></li>
+        </ul>
+    </nav>
+
+    <main class="destinations-overview">
+        <div class="carousel-placeholder">
+            <img src="images/carousel-image.png" alt="Carousel Image">
+        </div>
+        <div class="destinations-grid">
+            <a href="space-needle.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/space-needle.jpeg');"></div>
+                <h2>Space Needle, WA</h2>
+                <p>One of Seattle's most iconic landmarks, the Space Needle offers breathtaking views of the city and surrounding landscapes.</p>
+            </a>
+
+            <a href="olympic-national-park.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/olmypic-park.jpeg');"></div>
+                <h2>Olympic National Park, WA</h2>
+                <p>Explore diverse ecosystems, from lush rainforests to rugged coastlines, in this stunning national park in Washington.</p>
+            </a>
+
+            <a href="leavenworth.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/leavenworth.jpeg');"></div>
+                <h2>Leavenworth, WA</h2>
+                <p>This charming Bavarian-themed town is nestled in the Cascade Mountains and offers year-round outdoor activities.</p>
+            </a>
+
+            <a href="whistler.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/whistler.jpeg');"></div>
+                <h2>Whistler, B.C.</h2>
+                <p>A world-renowned ski destination, Whistler offers year-round adventure, from mountain biking to snow sports.</p>
+            </a>
+
+            <a href="crater-lake.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/crater-lake.jpeg');"></div>
+                <h2>Crater Lake, OR</h2>
+                <p>Known for its deep blue color, Crater Lake is the deepest lake in the U.S. and a beautiful sight to behold.</p>
+            </a>
+
+            <a href="the-gorge-amphitheatre.html" class="destination-card">
+                <div class="destination-placeholder" style="background-image: url('images/the-gorge.jpeg');"></div>
+                <h2>The Gorge Amphitheatre, WA</h2>
+                <p>Famous for its stunning scenery and live music events, The Gorge is a premier outdoor concert venue.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <button class="footer-button" onclick="history.back()">Go Back</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
