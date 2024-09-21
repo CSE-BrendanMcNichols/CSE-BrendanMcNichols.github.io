@@ -1,9 +1,9 @@
 :root {
     --background-color: #D4E9D9;
-    --text-color: #192D32;
+    --text-color: #192d32;
     --secondary-color: #9BC5BC;
-    --button-bg-color: #cccccc;
-    --button-text-color: #333333;
+    --button-bg-color: #4a7c59;
+    --button-text-color: #192d32;
 }
 
 body {
