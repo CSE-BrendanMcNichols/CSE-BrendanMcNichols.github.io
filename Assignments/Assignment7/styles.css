@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #476b80;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #000000;
+}
+
+.container {
+    background-color: #2992f5;
+    margin: 20px auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1.0);
+}
+
+label {
+    font-size: 18px;
+    color: #fff;
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 60px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #476b80;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #355b6b;
+}
+
+.canvas {
+    margin-top: 20px;
+    background-color: black;
+    width: 400px;
+    height: 350px;
+    margin: 20px auto;
+    border: 1px solid #fff;
+    position: relative;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000000;
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 60px;
+}
+
+.error-message {
+    color: #d16262;
+    margin-left: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star-message {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 15px;
+    display: none;
+    text-align: center;
+}
