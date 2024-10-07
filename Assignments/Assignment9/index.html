@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets of the Solar System</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Assignment 11</h1>
+    <h2 class="w3-text-teal">Classes</h2>
+
+    <div class="planet-container" id="planetContainer"></div>
+    <div id="planetModal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-opacity w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('planetModal').style.display='none'" 
+                class="w3-button w3-display-topright">&times;</span>
+                <h2 id="modalTitle"></h2>
+            </header>
+            <div class="w3-container">
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Images from Pexels</p>
+        <p>@CSE-BrendanMcNichols</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
