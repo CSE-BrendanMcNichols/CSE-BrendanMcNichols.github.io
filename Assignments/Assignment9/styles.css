@@ -40,6 +40,20 @@ footer {
     color: #666;
 }
 
+#modalContent {
+    text-align: left; /* Ensure all text inside the modal is left-aligned */
+    line-height: 1.6; /* Improve readability by increasing line height */
+}
+
+#modalContent p {
+    margin: 10px 0; /* Add consistent spacing between paragraphs */
+}
+
+#modalContent p:last-of-type {
+    margin-top: 20px; /* Add extra space above the Fun Fact to distinguish it */
+    font-style: italic; /* Optional: style the Fun Fact with italics */
+}
+
 @media (max-width: 768px) {
     .planet-container {
         flex-direction: column;
