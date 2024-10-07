@@ -41,17 +41,17 @@ footer {
 }
 
 #modalContent {
-    text-align: left; /* Ensure all text inside the modal is left-aligned */
-    line-height: 1.6; /* Improve readability by increasing line height */
+    text-align: left;
+    line-height: 1.6;
 }
 
 #modalContent p {
-    margin: 10px 0; /* Add consistent spacing between paragraphs */
+    margin: 10px 0;
 }
 
 #modalContent p:last-of-type {
-    margin-top: 20px; /* Add extra space above the Fun Fact to distinguish it */
-    font-style: italic; /* Optional: style the Fun Fact with italics */
+    margin-top: 20px;
+    font-style: italic;
 }
 
 @media (max-width: 768px) {
