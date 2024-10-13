@@ -69,3 +69,17 @@ footer {
 footer p {
     margin: 5px;
 }
+
+@media (max-width: 768px) {
+    .ice-cream-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .ice-cream-item {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
