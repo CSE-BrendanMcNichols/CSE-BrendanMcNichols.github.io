@@ -1,0 +1,90 @@
+[
+    {
+        "_id": 1,
+        "name": "Space Needle, WA",
+        "description": "An iconic landmark offering breathtaking views of Seattle and the surrounding landscapes.",
+        "link": "space-needle.html",
+        "img_name": "images/space-needle.jpeg",
+        "activities": ["Observation deck", "Sky Cafe", "VR experience"],
+        "best_time_to_visit": "May to September",
+        "recommended_duration": "2 hours",
+        "fun_fact": "The Space Needle was built for the 1962 World's Fair."
+    },
+    {
+        "_id": 2,
+        "name": "Olympic National Park, WA",
+        "description": "A national park featuring diverse ecosystems from rainforests to rugged coastlines.",
+        "link": "olympic-national-park.html",
+        "img_name": "images/olmypic-park.jpeg",
+        "activities": ["Hiking", "Wildlife watching", "Camping"],
+        "best_time_to_visit": "June to October",
+        "recommended_duration": "1 to 3 days",
+        "fun_fact": "Olympic National Park is home to four distinct ecosystems."
+    },
+    {
+        "_id": 3,
+        "name": "Leavenworth, WA",
+        "description": "A Bavarian-themed village with year-round outdoor activities and cultural events.",
+        "link": "leavenworth.html",
+        "img_name": "images/leavenworth.jpeg",
+        "activities": ["Wine tasting", "Festivals", "Hiking trails"],
+        "best_time_to_visit": "December for holiday lights or September for fall activities",
+        "recommended_duration": "1 day",
+        "fun_fact": "Leavenworth transformed into a Bavarian village in the 1960s to boost tourism."
+    },
+    {
+        "_id": 4,
+        "name": "Whistler, B.C.",
+        "description": "A popular ski resort offering activities all year round, from snow sports to mountain biking.",
+        "link": "whistler.html",
+        "img_name": "images/whistler.jpeg",
+        "activities": ["Skiing", "Mountain biking", "Zip-lining"],
+        "best_time_to_visit": "December to February for skiing, June to August for biking",
+        "recommended_duration": "2 to 3 days",
+        "fun_fact": "Whistler hosted the 2010 Winter Olympics."
+    },
+    {
+        "_id": 5,
+        "name": "Crater Lake, OR",
+        "description": "The deepest lake in the U.S. with striking blue waters formed by a collapsed volcano.",
+        "link": "crater-lake.html",
+        "img_name": "images/crater-lake.jpeg",
+        "activities": ["Boat tours", "Scenic drive", "Photography"],
+        "best_time_to_visit": "July to September",
+        "recommended_duration": "1 day",
+        "fun_fact": "Crater Lake was formed about 7,700 years ago after the collapse of Mount Mazama."
+    },
+    {
+        "_id": 6,
+        "name": "The Gorge Amphitheatre, WA",
+        "description": "A stunning concert venue known for its natural acoustics and beautiful views of the Columbia River.",
+        "link": "the-gorge-amphitheatre.html",
+        "img_name": "images/the-gorge.jpeg",
+        "activities": ["Concerts", "Camping", "Hiking"],
+        "best_time_to_visit": "May to September",
+        "recommended_duration": "1 day",
+        "fun_fact": "The Gorge is one of the most scenic concert locations in the world."
+    },
+    {
+        "_id": 7,
+        "name": "Mount Rainier National Park, WA",
+        "description": "An iconic volcanic peak with beautiful wildflower meadows and hiking trails.",
+        "link": "mount-rainier.html",
+        "img_name": "images/mount-rainier.jpeg",
+        "activities": ["Climbing", "Wildflower viewing", "Snowshoeing"],
+        "best_time_to_visit": "July to August",
+        "recommended_duration": "1 to 2 days",
+        "fun_fact": "Mount Rainier is an active volcano and the most glaciated peak in the contiguous U.S."
+    },
+    {
+        "_id": 8,
+        "name": "Portland Japanese Garden, OR",
+        "description": "A beautiful traditional Japanese garden offering tranquil paths and scenic views.",
+        "link": "portland-japanese-garden.html",
+        "img_name": "images/portland-garden.png",
+        "activities": ["Garden tour", "Tea ceremony", "Photography"],
+        "best_time_to_visit": "March to May or September to November",
+        "recommended_duration": "2 hours",
+        "fun_fact": "The Portland Japanese Garden is considered one of the most authentic Japanese gardens outside of Japan."
+    }
+]

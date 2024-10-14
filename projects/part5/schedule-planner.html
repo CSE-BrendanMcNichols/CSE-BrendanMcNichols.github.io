@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Schedule Planner - Explore the Pacific Northwest</title>
+</head>
+<body>
+    <header>
+        <h1>Explore the Pacific Northwest</h1>
+    </header>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="schedule-planner.html">Schedule Planner</a></li>
+            <li><a href="travel-tips.html">Travel Tips</a></li>
+        </ul>
+    </nav>
+
+    <main class="planner">
+        <section class="planner-form">
+            <h2>Create Your Schedule</h2>
+            <form>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" placeholder="Enter destination">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" id="date" name="date" placeholder="Enter date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="text" id="time" name="time" placeholder="Enter time">
+                </div>
+                <button type="submit" class="planner-button">Add to Schedule</button>
+            </form>
+        </section>
+
+        <section class="schedule-table">
+            <h2>Your Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Destination</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-09-15</td>
+                        <td>10:00 AM</td>
+                        <td>Space Needle, WA</td>
+                    </tr>
+                    <tr>
+                        <td>2024-09-16</td>
+                        <td>2:00 PM</td>
+                        <td>Olympic National Park, WA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <button class="footer-button" onclick="history.back()">Go Back</button>
+    </footer>  
+    
+    <script src="script.js"></script>
+</body>
+</html>
