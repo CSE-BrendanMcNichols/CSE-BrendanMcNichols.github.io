@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Customer Behavior Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #333;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 5px solid #007bff;
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        .dashboard-container {
+            margin: 30px 0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+    <!-- D3.js and TopoJSON libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <!-- Load our shopping data -->
+    <script src="shopping_data.js"></script>
+    <!-- Load our marketing analyzer -->
+    <script src="marketing_analyzer.js"></script>
+    <script>
+        // Constants and Setup
+        const width = 960;
+        const height = 600;
+    </script>
+    
+    <style>
+        /* Styles for the map visualization */
+        .state {
+            stroke: #fff;
+            stroke-width: 0.5px;
+            transition: fill 0.3s;
+        }
+        .state:hover {
+            fill-opacity: 0.8;
+            stroke-width: 1.5px;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .legend {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 2px 0;
+        }
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-Commerce Customer Behavior Analysis</h1>
+        <p>Visualization tools for exploring customer behavior data in e-commerce</p>
+    </header>
+
+    <div class="section">
+        <h2>Project Overview</h2>
+        <p>This project creates tools for data analysts to explore and find interesting relationships in e-commerce customer behavior data. Using a synthetic dataset from Kaggle, these visualizations demonstrate how analysts can uncover patterns in customer demographics, product preferences, and purchasing behaviors.</p>
+        
+        <p>The project consists of four main visualization tools:</p>
+        <ul>
+            <li><strong>Customer Segmentation Dashboard</strong> - Interactive Tableau dashboard for demographic analysis</li>
+            <li><strong>Purchase Pattern Explorer</strong> - Correlation analysis using R Shiny with ggplot2</li>
+            <li><strong>Geographic Analysis Dashboard</strong> - Regional trend analysis using D3.js maps</li>
+            <li><strong>Marketing Effectiveness Analyzer</strong> - D3.js application for evaluating marketing tactics</li>
+        </ul>
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Customer Segmentation Dashboard</h2>
+        <p>This dashboard allows analysts to identify valuable customer segments and understand their purchasing patterns by age, gender, purchase amount, and product categories.</p>
+        
+        <!-- Tableau Dashboard -->
+        <div class='tableauPlaceholder' id='viz1745809232068' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cu&#47;CustomerSegmentationDashboard_17458090942510&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CustomerSegmentationDashboard_17458090942510&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cu&#47;CustomerSegmentationDashboard_17458090942510&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1745809232068');                    
+            var vizElement = divElement.getElementsByTagName('object')[0];                    
+            if ( divElement.offsetWidth > 800 ) { 
+                vizElement.style.width='1000px';
+                vizElement.style.height='827px';
+            } else if ( divElement.offsetWidth > 500 ) { 
+                vizElement.style.width='1000px';
+                vizElement.style.height='827px';
+            } else { 
+                vizElement.style.width='100%';
+                vizElement.style.height='1077px';
+            }                     
+            var scriptElement = document.createElement('script');                    
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+    </div>
+
+<!-- Purchase Pattern Explorer Dashboard -->
+<div class="dashboard-container">
+    <h2>Purchase Pattern Explorer</h2>
+    <p>This correlation analysis tool visualizes relationships between variables through correlation matrices and scatter plots to help analysts discover which factors influence purchase behavior.</p>
+    
+    <!-- Shiny App Iframe - Replace with your actual shinyapps.io URL when deployed -->
+    <div style="position: relative; width: 100%; height: 600px; margin-top: 20px;">
+        <iframe src="https://bmcnics.shinyapps.io/PurchasePatternExplorer/" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                frameborder="0" 
+                allowfullscreen></iframe>
+    </div>
+    
+    <div class="section" style="margin-top: 620px;">
+        <h3>How to Use This Tool</h3>
+        <ul>
+            <li><strong>Correlation Matrix:</strong> See how different variables relate to each other</li>
+            <li><strong>Scatter Plot:</strong> Visualize relationships between two variables with optional color grouping</li>
+        </ul>
+        
+        <p>To use this tool:</p>
+        <ol>
+            <li>Upload your own CSV file (optional) or use the pre-loaded e-commerce dataset, to use the preloaded dataset click Analyze Data</li>
+            <li>Select a plot type (Correlation Matrix or Scatter Plot)</li>
+            <li>Choose which variables to analyze</li>
+            <li>Click "Analyze Data" to generate visualizations</li>
+            <li>Use the Data Preview tab to explore the raw dataset</li>
+        </ol>
+        
+    </div>
+</div>
+
+<!-- Geographic Analysis Dashboard -->
+<div class="dashboard-container">
+    <h2>Geographic Analysis Dashboard</h2>
+    <p>This map shows the distribution of customers and purchase behavior across different states.</p>
+    
+    <!-- D3.js Map Container -->
+    <div id="map-container" style="width: 100%; height: 500px;"></div>
+    
+    <!-- Simplified controls for the map -->
+    <div class="section" style="margin-top: 20px;">
+        <h3>View Options</h3>
+        <div style="margin-bottom: 20px;">
+            <div style="margin-bottom: 10px;">
+                <label for="metric-select">What to show on map:</label>
+                <select id="metric-select" style="padding: 5px; width: 200px;">
+                    <option value="count">Number of Customers</option>
+                    <option value="amount">Average Purchase Amount ($)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>State Details</h3>
+        <div id="map-details" style="margin-top: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;">
+            <p>Click on a state to see detailed information</p>
+        </div>
+        
+        <p><strong>How to use:</strong> Darker colors on the map indicate higher values. Click on states to see a detailed view.</p>
+    </div>
+</div>
+
+<!-- Marketing Effectiveness Analyzer Dashboard -->
+<div class="dashboard-container">
+    <h2>Marketing Effectiveness Analyzer</h2>
+    <p>This interactive dashboard helps evaluate the impact of various marketing tactics including discounts, promotion codes, and marketing channels.</p>
+    
+    <div class="marketing-dashboard" style="position: relative; width: 100%; margin-top: 20px;">
+        <!-- Filter controls -->
+        <div id="marketing-filters" style="margin-bottom: 15px;">
+            <label for="category-filter">Product Category:</label>
+            <select id="category-filter" style="margin-right: 15px;">
+                <option value="all">All Categories</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Outerwear">Outerwear</option>
+            </select>
+            
+            <label for="season-filter">Season:</label>
+            <select id="season-filter">
+                <option value="all">All Seasons</option>
+                <option value="Winter">Winter</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+            </select>
+        </div>
+        
+        <!-- Marketing visualizations container -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <!-- Discount Impact Chart -->
+            <div style="width: 48%; height: 250px; margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; font-size: 16px;">Discount Impact Analysis</h3>
+                <div id="discount-chart" style="width: 100%; height: 200px;"></div>
+            </div>
+            
+            <!-- Promo Code Chart -->
+            <div style="width: 48%; height: 250px; margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; font-size: 16px;">Promo Code Effectiveness</h3>
+                <div id="promo-chart" style="width: 100%; height: 200px;"></div>
+            </div>
+            
+            <!-- Shipping Method Chart -->
+            <div style="width: 48%; height: 250px; margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; font-size: 16px;">Shipping Method Comparison</h3>
+                <div id="shipping-chart" style="width: 100%; height: 200px;"></div>
+            </div>
+            
+            <!-- Key Metrics Dashboard -->
+            <div style="width: 48%; margin-bottom: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+                <h3 style="margin-top: 0; font-size: 16px;">Key Marketing Metrics</h3>
+                <div id="metrics-dashboard" style="width: 100%; height: auto;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="clear: both; margin-top: 30px; border-top: 1px solid #eee; padding-top: 15px;">
+        <p style="margin: 0;"><strong>How to use:</strong> Select product categories and seasons using the filters above to see how different marketing tactics perform across segments. The charts will update automatically to show relevant metrics for your selection.</p>
+    </div>
+</div>
+
+    <footer>
+        <p>Created by Brendan McNichols for CSCE 567 - Spring 2025</p>
+    </footer>
+    <!-- D3.js Geographic Analysis Script -->
+    <script>
+        // This will run once the page is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up the map dimensions
+            const mapContainer = document.getElementById('map-container');
+            const width = mapContainer.clientWidth;
+            const height = 500;
+            
+            // Create SVG container for the map
+            const svg = d3.select('#map-container')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+                
+            // Create a group for the map elements
+            const g = svg.append('g');
+            
+            // Setup projection (Albers USA is good for US maps)
+            const projection = d3.geoAlbersUsa()
+                .scale(width)
+                .translate([width / 2, height / 2]);
+                
+            // Create path generator
+            const path = d3.geoPath()
+                .projection(projection);
+                
+            // Create a tooltip
+            const tooltip = d3.select('body')
+                .append('div')
+                .attr('class', 'tooltip');
+                
+            // Load US states TopoJSON and use our pre-loaded shopping data
+            d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json')
+            .then(function(us) {
+                // shoppingData is already loaded from shopping_data.js
+                // Process the data for visualization                
+                // Create a map of state names to their data
+                const stateData = processData(shoppingData);
+                
+                // No need to populate filters in simplified version
+                
+                // Draw the initial map
+                drawMap(us, stateData);
+                
+                // Setup event listeners for filters
+                setupFilters(us, shoppingData);
+            })
+            .catch(function(error) {
+                console.error('Error loading US map data:', error);
+                document.getElementById('map-container').innerHTML = 
+                    '<p style="color: red;">Error loading map data: ' + error.message + '</p>';
+            });
+            
+            // Function to process the shopping data by state - simplified
+            function processData(data) {
+                const stateData = {};
+                
+                // Use all data, no filtering
+                let filteredData = data;
+                
+                // Group by state
+                const stateGroups = d3.group(filteredData, d => d.Location);
+                
+                // Calculate metrics for each state
+                stateGroups.forEach((values, state) => {
+                    const count = values.length;
+                    const totalAmount = d3.sum(values, d => +d['Purchase Amount (USD)']);
+                    const avgAmount = totalAmount / count;
+                    const avgRating = d3.mean(values, d => +d['Review Rating']);
+                    
+                    // Get category breakdown
+                    const categories = Array.from(d3.group(values, d => d.Category), 
+                        ([key, value]) => ({ category: key, count: value.length }));
+                    
+                    // Store all calculated metrics
+                    stateData[state] = {
+                        count,
+                        avgAmount,
+                        avgRating,
+                        categories,
+                        topCategory: categories.sort((a, b) => b.count - a.count)[0]?.category || 'None'
+                    };
+                });
+                
+                return stateData;
+            }
+            
+            // No filters to populate in simplified version
+            
+            // Function to draw the map
+            function drawMap(us, stateData, metric = 'count') {
+                // Clear existing map elements
+                g.selectAll('*').remove();
+                
+                // Convert TopoJSON to GeoJSON
+                const states = topojson.feature(us, us.objects.states).features;
+                
+                // Create a mapping between state IDs and state names
+                // State mapping - use a more flexible approach that handles case variations
+                const stateMapping = {
+                    '01': ['Alabama', 'alabama', 'AL'],
+                    '02': ['Alaska', 'alaska', 'AK'], 
+                    '04': ['Arizona', 'arizona', 'AZ'], 
+                    '05': ['Arkansas', 'arkansas', 'AR'], 
+                    '06': ['California', 'california', 'CA'],
+                    '08': ['Colorado', 'colorado', 'CO'], 
+                    '09': ['Connecticut', 'connecticut', 'CT'], 
+                    '10': ['Delaware', 'delaware', 'DE'], 
+                    '11': ['District of Columbia', 'district of columbia', 'DC'],
+                    '12': ['Florida', 'florida', 'FL'], 
+                    '13': ['Georgia', 'georgia', 'GA'], 
+                    '15': ['Hawaii', 'hawaii', 'HI'], 
+                    '16': ['Idaho', 'idaho', 'ID'], 
+                    '17': ['Illinois', 'illinois', 'IL'],
+                    '18': ['Indiana', 'indiana', 'IN'], 
+                    '19': ['Iowa', 'iowa', 'IA'], 
+                    '20': ['Kansas', 'kansas', 'KS'], 
+                    '21': ['Kentucky', 'kentucky', 'KY'], 
+                    '22': ['Louisiana', 'louisiana', 'LA'],
+                    '23': ['Maine', 'maine', 'ME'], 
+                    '24': ['Maryland', 'maryland', 'MD'], 
+                    '25': ['Massachusetts', 'massachusetts', 'MA'], 
+                    '26': ['Michigan', 'michigan', 'MI'], 
+                    '27': ['Minnesota', 'minnesota', 'MN'],
+                    '28': ['Mississippi', 'mississippi', 'MS'], 
+                    '29': ['Missouri', 'missouri', 'MO'], 
+                    '30': ['Montana', 'montana', 'MT'], 
+                    '31': ['Nebraska', 'nebraska', 'NE'], 
+                    '32': ['Nevada', 'nevada', 'NV'],
+                    '33': ['New Hampshire', 'new hampshire', 'NH'], 
+                    '34': ['New Jersey', 'new jersey', 'NJ'], 
+                    '35': ['New Mexico', 'new mexico', 'NM'], 
+                    '36': ['New York', 'new york', 'NY'],
+                    '37': ['North Carolina', 'north carolina', 'NC'], 
+                    '38': ['North Dakota', 'north dakota', 'ND'], 
+                    '39': ['Ohio', 'ohio', 'OH'], 
+                    '40': ['Oklahoma', 'oklahoma', 'OK'], 
+                    '41': ['Oregon', 'oregon', 'OR'],
+                    '42': ['Pennsylvania', 'pennsylvania', 'PA'], 
+                    '44': ['Rhode Island', 'rhode island', 'RI'], 
+                    '45': ['South Carolina', 'south carolina', 'SC'], 
+                    '46': ['South Dakota', 'south dakota', 'SD'],
+                    '47': ['Tennessee', 'tennessee', 'TN'], 
+                    '48': ['Texas', 'texas', 'TX'], 
+                    '49': ['Utah', 'utah', 'UT'], 
+                    '50': ['Vermont', 'vermont', 'VT'], 
+                    '51': ['Virginia', 'virginia', 'VA'],
+                    '53': ['Washington', 'washington', 'WA'], 
+                    '54': ['West Virginia', 'west virginia', 'WV'], 
+                    '55': ['Wisconsin', 'wisconsin', 'WI'], 
+                    '56': ['Wyoming', 'wyoming', 'WY']
+                };
+                
+                // Simple function to convert state ID to state name
+                function getStateName(id) {
+                    return stateMapping[id] ? stateMapping[id][0] : null;
+                }
+                
+                // Function to help look up state data with different formats
+                function getStateData(stateData, stateName) {
+                    if (!stateName) return null;
+                    
+                    // Direct match
+                    if (stateData[stateName]) {
+                        return stateData[stateName];
+                    }
+                    
+                    // Check all state variations
+                    for (const id in stateMapping) {
+                        const variations = stateMapping[id];
+                        if (variations.includes(stateName)) {
+                            // Try all other variations
+                            for (const variant of variations) {
+                                if (stateData[variant]) {
+                                    return stateData[variant];
+                                }
+                            }
+                        }
+                    }
+                    
+                    return null;
+                }
+                
+                // Determine the color scale based on the selected metric
+                let metricValues = [];
+                for (const state in stateData) {
+                    if (metric === 'count') {
+                        metricValues.push(stateData[state].count);
+                    } else if (metric === 'amount') {
+                        metricValues.push(stateData[state].avgAmount);
+                    } else if (metric === 'rating') {
+                        metricValues.push(stateData[state].avgRating);
+                    }
+                }
+                
+                // Simplified color scale with better contrast
+                const colorScale = d3.scaleSequential()
+                    .domain([0, d3.max(metricValues) || 1])
+                    .interpolator(d3.interpolateReds);
+                
+                // Draw states with debug logging
+                g.selectAll('.state')
+                    .data(states)
+                    .enter()
+                    .append('path')
+                    .attr('class', 'state')
+                    .attr('d', path)
+                    .attr('fill', function(d) {
+                        const stateName = getStateName(d.id);
+                        const stateDataEntry = getStateData(stateData, stateName);
+                        
+                        if (stateDataEntry) {
+                            let value;
+                            if (metric === 'count') {
+                                value = stateDataEntry.count;
+                            } else if (metric === 'amount') {
+                                value = stateDataEntry.avgAmount;
+                            }
+                            
+                            // Make sure we return a valid color even for edge cases
+                            if (value !== undefined && value !== null && !isNaN(value)) {
+                                return colorScale(value);
+                            }
+                        }
+                        
+                        // Default to light gray for states with no data
+                        return '#eee';
+                    })
+                    .on('mouseover', function(event, d) {
+                        const stateName = getStateName(d.id);
+                        showTooltip(event, stateName, stateData, metric);
+                    })
+                    .on('mousemove', function(event) {
+                        // Position the tooltip near the mouse cursor
+                        tooltip
+                            .style('left', (event.pageX + 10) + 'px')
+                            .style('top', (event.pageY + 10) + 'px');
+                    })
+                    .on('mouseout', function() {
+                        // Hide the tooltip
+                        tooltip.style('opacity', 0);
+                    })
+                    .on('click', function(event, d) {
+                        const stateName = getStateName(d.id);
+                        const stateDataEntry = getStateData(stateData, stateName);
+                        showStateDetails(stateName, stateDataEntry);
+                    });
+                
+                // Create a simple legend
+                createSimpleLegend(colorScale, metric);
+            }
+            
+            // Function to show tooltip
+            function showTooltip(event, stateName, data, metric) {
+                const stateDataEntry = getStateData(stateData, stateName);
+                
+                if (!stateDataEntry) {
+                    tooltip
+                        .style('opacity', 0.9)
+                        .html(`<strong>${stateName}</strong><br>No data available`);
+                    return;
+                }
+                
+                let metricValue;
+                if (metric === 'count') {
+                    metricValue = `<span style="font-size: 16px; font-weight: bold;">${stateDataEntry.count}</span> customers`;
+                } else if (metric === 'amount') {
+                    metricValue = `<span style="font-size: 16px; font-weight: bold;">$${stateDataEntry.avgAmount.toFixed(2)}</span> avg purchase`;
+                }
+                
+                tooltip
+                    .style('opacity', 0.9)
+                    .html(`<strong style="font-size: 14px;">${stateName}</strong><br>
+                        ${metricValue}`);
+                
+                // Position the tooltip near the mouse cursor
+                tooltip
+                    .style('left', (event.pageX + 10) + 'px')
+                    .style('top', (event.pageY + 10) + 'px');
+            }
+            
+            // Function to show state details in the info box
+            function showStateDetails(stateName, data) {
+                const detailsDiv = document.getElementById('map-details');
+                
+                if (!data) {
+                    detailsDiv.innerHTML = `<strong>${stateName}</strong><br>No data available for this state`;
+                    return;
+                }
+                
+                // Simple category breakdown - just top 3
+                let topCategories = '';
+                if (data.categories && data.categories.length > 0) {
+                    // Sort categories by count and take top 3
+                    const sortedCategories = [...data.categories].sort((a, b) => b.count - a.count).slice(0, 3);
+                    topCategories = '<h4>Top 3 Product Categories:</h4><ol>';
+                    sortedCategories.forEach(cat => {
+                        topCategories += `<li><strong>${cat.category}</strong>: ${cat.count} customers</li>`;
+                    });
+                    topCategories += '</ol>';
+                }
+                
+                detailsDiv.innerHTML = `
+                    <h3>${stateName}</h3>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                        <div style="text-align: center; padding: 10px; background: #f0f0f0; border-radius: 5px; width: 48%;">
+                            <div style="font-size: 24px; font-weight: bold;">${data.count}</div>
+                            <div>Total Customers</div>
+                        </div>
+                        <div style="text-align: center; padding: 10px; background: #f0f0f0; border-radius: 5px; width: 48%;">
+                            <div style="font-size: 24px; font-weight: bold;">$${data.avgAmount.toFixed(2)}</div>
+                            <div>Avg Purchase</div>
+                        </div>
+                    </div>
+                    ${topCategories}
+                `;
+            }
+            
+            // Function to create a simplified legend
+            function createSimpleLegend(colorScale, metric) {
+                // Remove any existing legend
+                svg.selectAll('.legend').remove();
+                
+                const legend = svg.append('g')
+                    .attr('class', 'legend')
+                    .attr('transform', `translate(${width - 120}, 20)`);
+                
+                const legendTitle = metric === 'count' ? 'Customer Count' : 'Avg Purchase ($)';
+                
+                legend.append('text')
+                    .attr('x', 0)
+                    .attr('y', -5)
+                    .style('font-weight', 'bold')
+                    .text(legendTitle);
+                
+                // Create just 3 levels for simplicity
+                const levels = [0.1, 0.5, 0.9];
+                const labels = ['Low', 'Medium', 'High'];
+                
+                legend.selectAll('.legend-item')
+                    .data(levels)
+                    .enter()
+                    .append('rect')
+                    .attr('class', 'legend-item')
+                    .attr('x', 0)
+                    .attr('y', (d, i) => i * 25 + 5)
+                    .attr('width', 15)
+                    .attr('height', 15)
+                    .style('fill', d => d3.interpolateReds(d));
+                
+                // Add simple text labels
+                legend.selectAll('.legend-text')
+                    .data(levels)
+                    .enter()
+                    .append('text')
+                    .attr('class', 'legend-text')
+                    .attr('x', 25)
+                    .attr('y', (d, i) => i * 25 + 17)
+                    .text((d, i) => labels[i]);
+            }
+            
+            // Simplified filter setup - just the metric selector
+            function setupFilters(us, shoppingData) {
+                const metricSelect = document.getElementById('metric-select');
+                
+                const updateMap = function() {
+                    const stateData = processData(shoppingData);
+                    drawMap(us, stateData, metricSelect.value);
+                };
+                
+                // Add event listener to metric select
+                metricSelect.addEventListener('change', updateMap);
+            }
+        });
+    </script>
+</body>
+</html>
